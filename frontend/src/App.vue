@@ -38,7 +38,7 @@ const loadSessions = async () => {
 const handleNewSession = async () => {
   try {
     const newSession = await createSession()
-    sessions.value.unshift(newSession)
+    sessions.value.push(newSession)
     currentDocument.value = null
     await selectSession(newSession.id)
   } catch (err) {
